@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>Jsp Sample</title>
+    <%@page import="java.sql.*;"%>
 </head>
-<body>
-
+<body bgcolor=yellow>
+    <%
+    try
+    {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con=(Connection)DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/forum","root","root");
+        Statement st=con.createStatement();
+        ResultSet rs=st.executeQuery("select * from user;");
+    %><table border=1 align=center style="text-align:center">
+      <thead>
+          <tr>
+             <th>Name</th>
+             <th>Surname</th>
+             <th>Username</th>
+             <th>Password</th>
+          </tr>
+      </thead>
+      <tbody>
+        <%while(rs.next())
+        {
+            %>
+            <tr>
+                <td><%=rs.getString("Name") %></td>
+                <td><%=rs.getString("Surname") %></td>
+                <td><%=rs.getString("Username") %></td>
+                <td><%=rs.getString("Password") %></td>
+            </tr>
+            <%}%>
+           </tbody>
+        </table><br>
+    <%}
+    catch(Exception e){
+        out.print(e.getMessage());%><br><%
+    }
+    finally{
+        st.close();
+        con.close();
+    }
+    %>
 </body>
 </html>

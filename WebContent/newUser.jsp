@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <style type="text/css">
@@ -26,14 +28,14 @@
 	backgound-size: contain;
     margin: 0 auto; 
 	background: #000000;
-	border: 8px solid #000000;
+	border: 12px solid #000000; 
 	color: white; 
    }
    div {
 	  width: 220px;
 	  height:450px;
 	  
-	  border: 5px solid black;
+	  border: 6px solid black; 
 	  margin: 0;   
 	  margin-left: 860px;   
 	  box-sizing: border-box;
@@ -59,7 +61,7 @@
 <body>
 <h2 style="font-family:verdana">Welcome to Cheap Bits. Fill out the form below to register</h2>
 <div>
-<center><form method="post" action="new_User">
+<center><form method="post" action="register.jsp">
 <h2 style="font-family:verdana">Sign Up</h2>
 
  <br>
@@ -77,7 +79,7 @@
  <br>
  <label style="font-family:verdana" for ="name">Username *</label>
  <br>
-  <input type="text" name="UN" required="true">
+  <input type="text" name="UN" required="true" value=<%=request.getAttribute("name") %>>
  <br>
  <label style="font-family:verdana" for ="name">Password *</label>
  <br>

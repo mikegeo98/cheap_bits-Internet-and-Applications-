@@ -1,4 +1,6 @@
-
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,7 +36,7 @@ public class new_User extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("/newUser.html").forward(request, response);
+		//request.getRequestDispatcher("/newUser.html").forward(request, response);
 	}
 
 	/**
@@ -50,28 +52,44 @@ public class new_User extends HttpServlet {
         // do some processing here...
         // get response writer
         PrintWriter writer = response.getWriter();
+        
         // build HTML code
-        String htmlRespone = "<html>";
-        htmlRespone += "<h2>Your username is: " + username + "<br/>";      
-        htmlRespone += "Your password is: " + password + "</h2>";    
-        htmlRespone += "</html>";
+        String htmlResponse = "<html>";
+        htmlResponse += "<h2>Your username is: " + username + "<br/>";      
+        htmlResponse += "Your password is: " + password + "</h2>";    
+        htmlResponse += "</html>";
         // return response
-        writer.println(htmlRespone);
+        writer.println(htmlResponse);
         Connection conn = null;
         try {
           String url = "jdbc:mysql://localhost:3306/cheap_bits";
           conn = DriverManager.getConnection(url,"root",null);
 
           Statement stmt = null;
-          String query =  "SELECT UID from user WHERE  Username = '"+ username +"' AND Password='"+ password +"'";
+          String query =  "SELECT * from user WHERE  Username = '"+ username +"' AND Password='"+ password +"'";
           try {
               stmt = conn.createStatement();
               ResultSet rs = stmt.executeQuery(query);
+              
               if (rs.next()) {
+            	  
+            	  String lame = rs.getString("Name");
+                  System.out.println("username: " + lame);
+                  String Surname = rs.getString("Surname");
+                  java.sql.Date DoB = rs.getDate("DoB");
+                  int UID  = rs.getInt("UID");
+            	  HttpSession session = request.getSession();
+                  session.setAttribute("user", username);
+                  session.setAttribute("password", password);
+                  session.setAttribute("dame", lame);
+                  session.setAttribute("surname", Surname);
+                  session.setAttribute("date", DoB);
+                  session.setAttribute("uid", UID);
+                  request.getRequestDispatcher("HopePage.jsp").forward(request,response);
 
-                  response.sendRedirect("login.html");
               } else {
-                  response.sendRedirect("HomePage.html");
+            	  request.setAttribute("name", username);
+            	  request.getRequestDispatcher("newUser.jsp").forward(request, response);
               }
 
               
