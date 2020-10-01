@@ -32,13 +32,13 @@
 	color: white; 
    }
    div {
-	  width: 220px;
-	  height:450px;
-	  border: 5px solid black;
-	  margin: 0;   
+	  width: 120px;
+	  height:90px;
+
+	  margin-top: 170px;   
 	  margin-left: 860px;   
-	  box-sizing: border-box;
-	  background:#3399ff
+	
+
 	}
    
    footer {
@@ -67,6 +67,32 @@
 	  background-color: white;
   	  color: black;
 	}
+
+box{
+  background-color: red;
+  padding: 1em 1.5em;
+  position: absolute;
+  left: 1px;
+  top: 275px;
+  box-sizing: border-box;
+}
+box2{
+  background-color: red;
+  padding: 1em 1.5em;
+  position: absolute;
+  left: 500px;
+  top: 275px;
+  box-sizing: border-box;
+}
+input{
+  background-color: red;
+  padding: 1em 1.5em;
+  box-sizing: border-box;
+}
+
+
+/* Non-Demo Styles */
+
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -90,12 +116,24 @@
 	    <td>Date Of Birth:<%=request.getSession().getAttribute("date") %></td>
 	    </tr>
 	    <td>User Unique ID:<%=request.getSession().getAttribute("uid") %></td>
-	    </tr>
-	    <td>50</td>
+	  </tr>
 	  </tr>
 	</table>
-		
-	<h5> The request was made with the <%=request.getMethod()%> HTTP method</h5>
+<box><form method="post" action="pageUpdate.jsp">
+
+ <input style="font-family:verdana" type="submit" value="Update Profile">
+  
+</form></box>
+<box2><form method="post" action="products.jsp">
+
+ <input style="font-family:verdana" type="submit" value="Check Available Products">
+  
+</form></box2>
+<div><form method="post" action="pageUpdate.jsp">
+ <input style="font-family:verdana" type="submit" value="Logout" >
+</form></div>
+	
+
 	<footer> Thanks for joining! Date : <%=new java.util.Date() %></footer>	
 </body>
 </html>
