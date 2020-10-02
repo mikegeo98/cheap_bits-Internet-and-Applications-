@@ -41,6 +41,14 @@
 	  box-sizing: border-box;
 	  background:#3399ff
 	}
+	box6{
+	  background-color: blue;
+	  padding: 1em 1.5em;
+	  position: absolute;
+	  left: 0px;
+	  top: 125px;
+	  box-sizing: border-box;
+	}
    
 
 </style>
@@ -70,7 +78,11 @@
   <input style="font-family:verdana" type="submit">
  <br>
 </form></center>
+  <box6><form method="post" action="HopePage.jsp">
 
+ <input style="font-family:verdana" type="submit" value="Back">
+
+</form></box6>
 </div></body>
 
 </html>

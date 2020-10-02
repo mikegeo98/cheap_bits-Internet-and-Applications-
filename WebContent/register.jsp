@@ -28,6 +28,16 @@ st=conn.createStatement();
 
 int i=st.executeUpdate("INSERT INTO `user`(`Name`, `Surname`, `DoB`, `Username`, `Password`) VALUES ('"+one+"','"+two+"','"+three+"','"+four+"','"+five+"')");
 out.println("Data is successfully inserted!");
+rs = st.executeQuery("SELECT * FROM user WHERE Name='"+one+"'");
+rs.next();
+int meme =rs.getInt("UID");
+session.setAttribute("user", four);
+session.setAttribute("password", five);
+session.setAttribute("dame", one);
+session.setAttribute("surname", two);
+session.setAttribute("date", three);
+session.setAttribute("uid", meme);
+request.getRequestDispatcher("HopePage.jsp").forward(request,response);
 }
 catch(Exception e)
 {
@@ -35,6 +45,6 @@ System.out.print(e);
 e.printStackTrace();
 }
 %>
-<jsp:forward page="HopePage.jsp"/>
+
 </body>
 </html>

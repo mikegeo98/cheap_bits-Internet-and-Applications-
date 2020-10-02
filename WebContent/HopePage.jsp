@@ -52,7 +52,7 @@
 	  text-align: center;
 	}
 	table {
-	  border-collapse
+	  border-collapse;
 	  background-color: white;
 	}
 	th{
@@ -82,6 +82,22 @@ box2{
   position: absolute;
   left: 500px;
   top: 275px;
+  box-sizing: border-box;
+}
+box3{
+  background-color: red;
+  padding: 1em 1.5em;
+  position: absolute;
+  left: 960px;
+  top: 110px;
+  box-sizing: border-box;
+}
+box5{
+  background-color: red;
+  padding: 1em 1.5em;
+  position: absolute;
+  left: 960px;
+  top: 210px;
   box-sizing: border-box;
 }
 input{
@@ -124,12 +140,22 @@ input{
  <input style="font-family:verdana" type="submit" value="Update Profile">
   
 </form></box>
+<box3><form method="post" action="basket.jsp">
+
+ <input style="font-family:verdana" type="submit" value="My Basket">
+  
+</form></box3>
+<box5><form method="post" action="myorders.jsp">
+
+ <input style="font-family:verdana" type="submit" value="My Orders">
+  
+</form></box5>
 <box2><form method="post" action="products.jsp">
 
  <input style="font-family:verdana" type="submit" value="Check Available Products">
   
 </form></box2>
-<div><form method="post" action="pageUpdate.jsp">
+<div><form method="post" action="logout">
  <input style="font-family:verdana" type="submit" value="Logout" >
 </form></div>
 	

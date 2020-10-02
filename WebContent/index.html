@@ -49,6 +49,22 @@
 	  color: black;
 	  text-align: center;
 	}
+	box2{
+  background-color: red;
+  padding: 1em 1.5em;
+  position: absolute;
+  left: 500px;
+  top: 275px;
+  box-sizing: border-box;
+}
+box3{
+  background-color: red;
+  padding: 1em 1.5em;
+  position: absolute;
+  left: 960px;
+  top: 110px;
+  box-sizing: border-box;
+}
 </style>
 <head>
 <meta charset="UTF-8">
@@ -75,7 +91,19 @@
  <br>
  <input style="font-family:verdana" type="submit">
 </form></center>
-</div></body>
+
+</div>
+<box3><form method="post" action="basket.jsp">
+
+ <input style="font-family:verdana" type="submit" value="My Basket">
+  
+</form></box3>
+<box2><form method="post" action="products.jsp">
+
+ <input style="font-family:verdana" type="submit" value="Check Available Products">
+  
+</form></box2>
+</body>
 <footer>
   <p></p>
 </footer>
