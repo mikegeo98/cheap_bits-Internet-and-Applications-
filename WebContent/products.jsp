@@ -115,6 +115,12 @@
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+#tfhover tr td {
+    background-color:transparent
+}
+#tfhover tr:hover td:not(.link) {
+  background-color:#f3f8aa;
+}
 </style>
 <head>
 <meta charset="UTF-8">
@@ -153,7 +159,6 @@
             	<input type="hidden" name="name" value=<%=rs.getString("Name")%>>
             	<input type="hidden" name="price" value=<%=rs.getInt("Price")%>>
             	<td><%=rs.getString("Name") %></td>
-
                 <td><%=rs.getString("Type") %></td>
                 <td><div class="popup" onmouseover="myFunction()">
                 <span class="popuptext" id="myPopup"><%=((123*rs.getInt("Price"))/100)%></span>

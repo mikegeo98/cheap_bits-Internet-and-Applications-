@@ -75,7 +75,7 @@
 	  padding: 1em 1.5em;
 	  position: absolute;
 	  left: 500px;
-	  top: 375px;
+	  top: 325px;
 	  box-sizing: border-box;
 	}
 	box4{
@@ -83,7 +83,7 @@
 	  padding: 1em 1.5em;
 	  position: absolute;
 	  left: 500px;
-	  top: 475px;
+	  top: 425px;
 	  box-sizing: border-box;
 	}
 	box6{

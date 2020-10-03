@@ -130,9 +130,6 @@ input{
 	    <td>Last Name:<%=request.getSession().getAttribute("surname") %></td>
 	    </tr>
 	    <td>Date Of Birth:<%=request.getSession().getAttribute("date") %></td>
-	    </tr>
-	    <td>User Unique ID:<%=request.getSession().getAttribute("uid") %></td>
-	  </tr>
 	  </tr>
 	</table>
 <box><form method="post" action="pageUpdate.jsp">

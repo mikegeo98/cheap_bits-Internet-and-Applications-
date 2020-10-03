@@ -71,6 +71,7 @@ while(i<30)
 session.setAttribute("Cart", null);
 session.setAttribute("Total", null);
 session.setAttribute("check", null);
+session.setAttribute("current", null);
 }
 catch(Exception e)
 {

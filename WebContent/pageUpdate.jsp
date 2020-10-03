@@ -61,7 +61,7 @@
 <h2 style="font-family:verdana">Update your personal information in the form below</h2>
 <div>
 <center><form method="post" action="update.jsp">
-<h2 style="font-family:verdana">Sign Up</h2>
+<h2 style="font-family:verdana">Profile</h2>
 
  <br>
  <label style="font-family:verdana" for ="name">Name *</label>
