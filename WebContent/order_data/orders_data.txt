@@ -45,3 +45,5 @@ Client: 30 ProductID: 4
 Client: 30 ProductID: 5
 Client: 1 ProductID: 1
 Client: 1 ProductID: 5
+Client: 1 ProductID: 10
+Client: 1 ProductID: 10
